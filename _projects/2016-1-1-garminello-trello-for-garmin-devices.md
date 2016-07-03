@@ -46,14 +46,16 @@ Good example of such a workout would be [7 min workout](http://7-min.com/) or di
 ## What it is
 
 This project was to integrate [Trello](http://trello.com) with Garmin devices. Workouts can be easily defined in Trello (see this [example public board](https://trello.com/b/SOCdcatH/workouts)).
-Note, how durations for each element of the workout sequence are defined using simple `[XXm YYs]` text added to the card summary.
+Note, how durations for each element of the workout sequence are defined using simple `[XXm YYs]` text added to the card summary:
+
+![Trello workout definition]({{ site.baseurl }}/images/projects/trello_workout_small.png)
 
 This required:
 
-1. writing a web backend and frontend that integrated with Trello using their REST API. It supports user registration (using [passport](https://github.com/jaredhanson/passport)).
-1. writing an [Connect IQ app](https://apps.garmin.com/) which would communicate with the backend
-
-The app is available at **[Garmin IQ Shop](https://apps.garmin.com/en-US/apps/da6ba406-488c-4f10-83d4-3e70507d4656)**. It has its dedicated **[Garminello website](https://garminello.herokuapp.com)** hosted on [heroku](http://heroku.com).
+1. Writing a web backend and frontend that integrated with Trello using their REST API. It supports user registration (using [passport](https://github.com/jaredhanson/passport)).  
+**[Garminello website](https://garminello.herokuapp.com)** is hosted on [heroku](http://heroku.com).
+1. Writing an [Connect IQ app](https://apps.garmin.com/) which would communicate with the backend.  
+The app is available at **[Garmin IQ Shop](https://apps.garmin.com/en-US/apps/da6ba406-488c-4f10-83d4-3e70507d4656)**. 
 
 The diagram below shows state changes of the app:
 ![Garminello app diagram]({{ site.baseurl }}/images/projects/garminello_app_diagram.png) 

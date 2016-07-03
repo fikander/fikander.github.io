@@ -48,3 +48,6 @@ Heroku:
 Docker:
   type: platform
   url: http://docker.com
+
+Jekyll:
+  type: build tool
