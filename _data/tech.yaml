@@ -4,6 +4,7 @@ Python:
 
 PostgreSQL:
   type: database
+  url: https://www.postgresql.org
 
 Monkey C:
   type: language
@@ -28,3 +29,22 @@ JavaScript:
 
 Java:
   type: language
+
+jQuery:
+  type: framework
+
+AppEngine:
+  type: platform
+
+Express:
+  type: framework
+  desc: Lightweight NodeJS web framework
+  url: http://expressjs.com
+
+Heroku:
+  type: hosting
+  url: http://heroku.com
+
+Docker:
+  type: platform
+  url: http://docker.com
