@@ -1,0 +1,30 @@
+Python:
+  type: language
+  url: http://www.python.org
+
+PostgreSQL:
+  type: database
+
+Monkey C:
+  type: language
+
+NodeJS:
+  type: framework
+
+BackboneJS:
+  type: framework
+
+Browserify:
+  type: framework
+
+Gulp:
+  type: build tool
+
+JavaScript ES6:
+  type: language
+
+JavaScript:
+  type: language
+
+Java:
+  type: language
