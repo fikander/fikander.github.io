@@ -9,6 +9,8 @@ repositories:
     name: Jekyll based blog and project documentation
 technologies:
   - Jekyll
+active: true
+size: medium
 ---
 This blog!
 

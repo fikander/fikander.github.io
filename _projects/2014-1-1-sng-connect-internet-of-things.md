@@ -12,6 +12,8 @@ technologies:
   - Python
   - Cassandra
   - PostgreSQL
-published: true
+size: x-large
+active: false
+published: false
 ---
 Some content

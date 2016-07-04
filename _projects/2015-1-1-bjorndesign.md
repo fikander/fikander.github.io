@@ -3,6 +3,8 @@ layout: project
 title: Bjorn Design
 technologies:
   - Wordpress
-published: true
+size: medium
+active: true
+published: false
 ---
 [bjorndesign.co.uk](http://bjorndesign.co.uk)

@@ -7,7 +7,9 @@ permalink: /projects/
 Projects I worked on:
 
 {% for project in site.projects reversed %}
-1. {{ project.date | date: "%Y" }}: [{{ project.title }}]({{ project.url }})
+* {{ project.date | date: "%Y" }}: [{{ project.title }}]({{ project.url }})
+{% if project.size %}, {{ project.size }}{% endif %}
+{% if project.active %}, active{% endif %}
 {% endfor %}
 
 # Technologies

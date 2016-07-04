@@ -4,5 +4,8 @@ repositories:
 technologies:
   - Python
   - AppEngine
+size: small
+active: false
+published: false
 ---
 Some content

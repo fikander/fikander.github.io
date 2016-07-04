@@ -239,6 +239,25 @@ nav {
 }
 
 //
+// content
+//
+article {
+
+  img {
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//
 // .main
 //
 

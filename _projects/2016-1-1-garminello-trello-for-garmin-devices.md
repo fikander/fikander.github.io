@@ -6,7 +6,6 @@ technologies:
   - NodeJS
   - BackboneJS
   - Browserify
-  - Babel
   - Gulp
   - JavaScript ES6
   - Express
@@ -25,16 +24,16 @@ repositories:
   - url: https://github.com/fikander/garminello-web
     name: NodeJS based backend and BackboneJS frontend
 published: true
+active: true
+size: large
 ---
-
 Having used [Fitbit One](https://www.fitbit.com/uk/one) since 2012, I decided to finally try different sports tracker.
 
-The choice was newly released in April 2016 Garmin [vívoactive® HR](https://buy.garmin.com/en-US/US/wearabletech/wearables/vivoactive-hr/prod538374.html).
+The choice was a newly released in April 2016 Garmin [vívoactive® HR](https://buy.garmin.com/en-US/US/wearabletech/wearables/vivoactive-hr/prod538374.html).
 
 ![Garmin vívoactive® HR]({{ site.baseurl }}/images/projects/vivoactive_hr.jpg)
 
 It's a brilliant watch, with many smartwatch functions (calls, notifications etc.), impressive selection of supported sports (smimming was the big one for me as I swim indoor a lot), and a built-in GPS.
-
 
 ## Motivation
 
@@ -60,10 +59,16 @@ The app is available at **[Garmin IQ Shop](https://apps.garmin.com/en-US/apps/da
 The diagram below shows state changes of the app:
 ![Garminello app diagram]({{ site.baseurl }}/images/projects/garminello_app_diagram.png) 
 
+## Challenges
+
+* Programming for a very resource constrained device using fairly limited C++ - like language - Monkey C.
+* As someone starting NodeJS development I was overwhelmed by the number of frameworks and build tools
+ available for the platform.  
+It took longer to decide on technology than to actually implement the system.
+
 ## Lessons learned
 
-* NodeJS - my first project using Express framework 
+* NodeJS - my first project using Express framework.
 * JavaScript ES6 - this is the first project where I had a chance to use ECMAScript 6 specification. Thanks to [Babel project](https://github.com/babel/babel) (and babelify for browserify) this was pretty easy.
 * Web backend is Dockerised. Launching NodeJS and PostgreSQL based backed locally is a matter or running docker-compose.
 * Hosting and monitoring using heroku.
-* Programming for a very resource constrained device using fairly limited C++ - like language - Monkey C

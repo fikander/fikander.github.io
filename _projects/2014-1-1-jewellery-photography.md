@@ -6,6 +6,9 @@ categories:
 tags:
   - jewellery
   - photography
+size: medium
+active: false
+published: false
 ---
 
 ## Lessons
