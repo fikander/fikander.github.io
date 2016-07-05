@@ -67,7 +67,9 @@ defaults:
 collections:
   projects:
     output: true
-    permalink: /project/:path/
+    permalink: /projects/:year/:title/
+
+# unpublished: true
 
 #
 # !! You don't need to change any of the configuration flags below !!

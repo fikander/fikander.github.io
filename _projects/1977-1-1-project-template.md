@@ -12,7 +12,6 @@ category: category1
 tags:
   - tag1
 published: false
-date: 1977-1-1
 ---
 This is sample project, built in {{ page.date | date: "%Y" }}.
 

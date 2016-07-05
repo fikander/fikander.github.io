@@ -5,7 +5,7 @@ technologies:
   - Wordpress
 size: medium
 active: true
-published: false
-date: 2015-1-1
+category: ecommerce
+published: true
 ---
 [bjorndesign.co.uk](http://bjorndesign.co.uk)

@@ -303,6 +303,9 @@ article {
 
     h2 {
       margin: 0px;
+      a {
+        color: $darkGray;
+      }
     }
 
     .read-more {
@@ -363,6 +366,12 @@ article {
 //
 // .main
 //
+
+.page {
+  h1 {
+    line-height: 1.25em;
+  }
+}
 
 .entry {
 }

@@ -11,7 +11,6 @@ technologies:
   - Jekyll
 active: true
 size: small
-date: 2016-1-1
 ---
 This blog!
 

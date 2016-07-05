@@ -14,7 +14,6 @@ technologies:
 published: true
 active: true
 size: large
-date: 2015-10-1
 ---
 [Atlassian JIRA add-ons](http://kanbanalytics.com) to animate flow of work on Kanban boards.
 Inspired by retrospective meetings, where the teams wanted to see how the project unfolded.
