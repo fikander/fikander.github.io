@@ -15,9 +15,18 @@
     {% endif %}
   </div>
   <div class="summary">
-    <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
-    <p>{{ project.excerpt }}</p>
-    <a href="{{ site.baseurl }}{{ project.url }}" class="read-more">Read More...</a>
+    {% if project.summary_image %}
+    <div class="summary-left">
+    {% endif %}
+      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+      <p>{{ project.excerpt }}</p>
+      <a href="{{ site.baseurl }}{{ project.url }}" class="read-more">Read More...</a>
+    {% if project.summary_image %}
+    </div>
+    <div class="summary-right">
+        <img src="{{ site.baseurl }}/images/projects/{{ project.summary_image }}"/>
+    </div>
+    {% endif %}
   </div>
   <div class="footer">
     {% for technology in project.technologies %}

@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   letter-spacing: -.04em;
 
-  line-height: 1.7;
+  line-height: 1.35;
   margin: 1em 0 15px;
   padding: 0;
 
@@ -256,6 +256,12 @@ article {
     margin-right: auto;
   }
 
+  @media (max-width: 780px) {
+    img {
+      max-height: 200px;
+    }
+  }
+
   iframe {
     display: block;
     margin-left: auto;
@@ -273,6 +279,7 @@ article {
   .header {
     font-family: $lucida;
     font-size: 15px;
+    margin-bottom: 10px;
     
     .date {
       font-size: 15px;
@@ -294,6 +301,9 @@ article {
   }
 
   .summary {
+
+    overflow: auto;
+
     a {
     }
 
@@ -308,6 +318,18 @@ article {
       }
     }
 
+    // 2 columns for summary if wide enough
+    @media (min-width: 780px) {
+      .summary-left {
+        float: left;
+        width: 60%;
+      }
+    .summary-right {
+        float: left;
+        width: 40%;
+      }
+    }
+
     .read-more {
       font-family: $lucida;
       text-transform: uppercase;
@@ -316,10 +338,13 @@ article {
   }
 
   .footer {
+    clear: both;
     margin-top: 10px;
+
     hr {
       color: $lightGray;
     }
+
     span {
       font-family: $lucida;
       font-size: 15px;
@@ -330,6 +355,7 @@ article {
       border-radius: 3px;
       display: inline-block;
     }
+
     .tech-language {
       background-color: $lightBlue;
     }
@@ -366,12 +392,6 @@ article {
 //
 // .main
 //
-
-.page {
-  h1 {
-    line-height: 1.25em;
-  }
-}
 
 .entry {
 }

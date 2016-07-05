@@ -14,6 +14,7 @@ technologies:
 published: true
 active: true
 size: large
+summary_image: codegeist2015_winner.png
 ---
 [Atlassian JIRA add-ons](http://kanbanalytics.com) to animate flow of work on Kanban boards.
 Inspired by retrospective meetings, where the teams wanted to see how the project unfolded.
