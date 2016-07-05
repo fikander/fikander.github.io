@@ -10,7 +10,7 @@ repositories:
 technologies:
   - Jekyll
 active: true
-size: medium
+size: small
 date: 2016-1-1
 ---
 This blog!
