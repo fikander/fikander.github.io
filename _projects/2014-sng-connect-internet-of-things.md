@@ -15,5 +15,6 @@ technologies:
 size: x-large
 active: false
 published: false
+date: 2014-1-1
 ---
 Some content

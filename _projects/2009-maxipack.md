@@ -8,6 +8,7 @@ technologies:
 size: medium
 active: false
 published: false
+date: 2009-1-1
 ---
 Concept and prototype of a service. Created with a friend Mirek in the format which allowed me to apply for EU grant.
 
