@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-Projects I worked on:
+Personal projects I worked on:
 
 {% for project in site.projects reversed %}
 * {{ project.date | date: "%Y" }}: [{{ project.title }}]({{ project.url }})

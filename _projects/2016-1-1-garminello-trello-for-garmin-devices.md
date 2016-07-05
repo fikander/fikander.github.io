@@ -2,16 +2,16 @@
 layout: project
 title: Garminello - Trello for Garmin devices
 technologies:
-  - Monkey C
+  - Docker
+  - JavaScript ES6
   - NodeJS
   - BackboneJS
   - Browserify
   - Gulp
-  - JavaScript ES6
   - Express
   - PostgreSQL
   - Heroku
-  - Docker
+  - Monkey C
 category: software
 tags:
   - watch
@@ -25,17 +25,18 @@ repositories:
     name: NodeJS based backend and BackboneJS frontend
 published: true
 active: true
-size: large
+size: medium
 ---
-Having used [Fitbit One](https://www.fitbit.com/uk/one) since 2012, I decided to finally try different sports tracker.
+Trello integration for Garmin devices. Includes [smartwatch application](https://apps.garmin.com/en-US/apps/da6ba406-488c-4f10-83d4-3e70507d4656) and [NodeJS based backend](https://garminello.herokuapp.com), with UI based on BackboneJS.
 
+## Motivation
+
+Having used [Fitbit One](https://www.fitbit.com/uk/one) since 2012, I decided to finally try different sports tracker.  
 The choice was a newly released in April 2016 Garmin [vívoactive® HR](https://buy.garmin.com/en-US/US/wearabletech/wearables/vivoactive-hr/prod538374.html).
 
 ![Garmin vívoactive® HR]({{ site.baseurl }}/images/projects/vivoactive_hr.jpg)
 
 It's a brilliant watch, with many smartwatch functions (calls, notifications etc.), impressive selection of supported sports (smimming was the big one for me as I swim indoor a lot), and a built-in GPS.
-
-## Motivation
 
 The one feature it doesn't support though (at least at the time of writing) is **customised workouts**.
 What I wanted is an easy way to prepare a set of exercises together with durations, and play them on my watch as I exercise.
@@ -44,16 +45,24 @@ Good example of such a workout would be [7 min workout](http://7-min.com/) or di
 
 ## What it is
 
-This project was to integrate [Trello](http://trello.com) with Garmin devices. Workouts can be easily defined in Trello (see this [example public board](https://trello.com/b/SOCdcatH/workouts)).
-Note, how durations for each element of the workout sequence are defined using simple `[XXm YYs]` text added to the card summary:
+This project was to integrate [Trello](http://trello.com) with Garmin devices.
+
+**Workouts** can be easily defined in Trello (see this [example public board](https://trello.com/b/SOCdcatH/workouts)) as a sequence of cards in a list. Trello board can have many lists. Every list is a separate sequence (e.g. separete workout).  
+Note, how **durations** for each element of the workout sequence are defined using simple `[XXm YYs]` text added to the card summary:
 
 ![Trello workout definition]({{ site.baseurl }}/images/projects/trello_workout_small.png)
 
-This required:
+To achieve seamless integration with Garmin watches, it required:
 
-1. Writing a web backend and frontend that integrated with Trello using their REST API. It supports user registration (using [passport](https://github.com/jaredhanson/passport)).  
-**[Garminello website](https://garminello.herokuapp.com)** is hosted on [heroku](http://heroku.com).
-1. Writing an [Connect IQ app](https://apps.garmin.com/) which would communicate with the backend.  
+1. Writing a **web based backend** and frontend that integrated with Trello using their REST API.  
+**[Garminello backend](https://garminello.herokuapp.com)** is hosted on [heroku](http://heroku.com).  
+The main purpose of backend is to:
+  * user registration (using [passport](https://github.com/jaredhanson/passport))
+  * communicate with Trello on behalf of the user (using OAuth token)
+  * translate Trello results (e.g. optimise response size for watch, interpret duration data)
+  * authenticate registered user watches
+  * expose REST API for the watches to use
+1. Writing an **[Connect IQ app](https://apps.garmin.com/)** which would communicate with the backend.  
 The app is available at **[Garmin IQ Shop](https://apps.garmin.com/en-US/apps/da6ba406-488c-4f10-83d4-3e70507d4656)**. 
 
 The diagram below shows state changes of the app:

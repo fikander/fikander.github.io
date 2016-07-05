@@ -10,7 +10,7 @@ Monkey C:
   type: language
 
 NodeJS:
-  type: framework
+  type: platform
 
 BackboneJS:
   type: framework

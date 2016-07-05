@@ -43,7 +43,7 @@ Dedicated website with more detailed descriptions at **[kanbanalytics.com](http:
 ## Awards
  
 Retrospective Tools for JIRA (JIRA Cloud add-on) has been selected as  
-**[Atlassian Codegeist 2015 Best Cloud Add-on winner](http://codegeist2015.devpost.com/submissions)**
+**[Atlassian Codegeist 2015 Best Cloud Add-on winner](http://devpost.com/software/retrospective-tools-for-jira)**
 
 ![Winner]({{ site.baseurl }}/images/projects/codegeist2015_winner.png)
 

@@ -18,22 +18,27 @@ html {
 }
 
 body {
-	background: $white;
-  font: 18px/1.4 $helvetica;
+	background: $almostWhite;
+  font-family: $georgia;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
   color: $darkGray;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
+  max-width: 780px;
   padding: 0 10px;
   width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
+  /*font-family: $helveticaNeue;*/
+  font-family: $lucida;
   color: $darkerGray;
   font-weight: bold;
+  letter-spacing: -.04em;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -45,22 +50,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 36px;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 20px;
   color: $gray;
 }
 
@@ -153,11 +158,12 @@ img {
 
 .wrapper-masthead {
   margin-bottom: 50px;
+  background-color: $white;
+  border-bottom: 1px solid $lightGray;
 }
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
 
   @include mobile {
     text-align: center;
@@ -258,8 +264,108 @@ article {
 }
 
 //
+// projects
+//
+.project {
+  background: $white;
+
+
+  .header {
+    font-family: $lucida;
+    font-size: 15px;
+    
+    .date {
+      font-size: 15px;
+      font-style: normal;
+      color: $darkGray;
+    }
+        
+    .category {
+    }
+    
+    .size {
+    }
+
+    .active {
+      float: right;
+      color: $green;
+      font-weight: bold;
+    }
+  }
+
+  .summary {
+    a {
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    h2 {
+      margin: 0px;
+    }
+
+    .read-more {
+      font-family: $lucida;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+  }
+
+  .footer {
+    margin-top: 10px;
+    hr {
+      color: $lightGray;
+    }
+    span {
+      font-family: $lucida;
+      font-size: 15px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 5px 8px;
+      background-color: $lightGray;
+      border-radius: 3px;
+      display: inline-block;
+    }
+    .tech-language {
+      background-color: $lightBlue;
+    }
+    .tech-platform {
+      background-color: #ffa07a;
+    }
+    .tech-hosting {
+      background-color: #ffffe0;
+    }
+    .tech-framework {
+      background-color: #fafad2;
+    }
+    .tech-database {
+      background-color: #f08080;
+    }
+  }
+}
+
+.dot-divider {
+  padding: 0 .45em;
+  &:after {
+    content: "·";
+  }
+}
+
+.project-summary {
+  background: $white;
+  border-radius: 3px;
+  border: 1px solid $lightGray;
+  margin-bottom: 10px;
+  padding: 20px 20px;
+}
+
+//
 // .main
 //
+
+.entry {
+}
 
 .posts > .post {
   padding-bottom: 2em;
@@ -272,6 +378,9 @@ article {
 }
 
 .post {
+  background-color: $white;
+  padding: 20px;
+
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;

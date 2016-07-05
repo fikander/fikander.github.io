@@ -1,41 +1,47 @@
 ---
 layout: default
+body_class: project
 ---
 
 <article class="page">
 
-    <h1>Project: {{ page.title }}</h1>
-    <p>Size: {{ page.size }}, active: {{ page.active }}</p>
+    <h1>{{ page.title }}</h1>
+
+      <div class="header">
+        <span class="date">{{ page.date | date: "%Y" }}</span>
+        <span class="dot-divider"></span>
+        <span class="category">{{ page.category }}</span>
+        {% if page.size %}
+          <span class="dot-divider"></span>
+          <span class="size">{{ page.size }}</span>
+        {% endif %}
+        {% if page.active %}
+          <span class="active">active</span>
+        {% endif %}
+      </div>
+
+    <div class="footer">
+      {% for technology in page.technologies %}
+        <span class="tech-{{ site.data.tech[technology].type }}">{{ technology }}</span>
+      {% endfor %}
+<!---
+      <hr/>
+      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+-->
+    </div>
 
     <div class="entry">
         {{ content }}
 
-        <h2>Repositories</h2>
-        <ul>
-        {% for repo in page.repositories %}
-            <li><a href="{{ repo.url }}">{{ repo.name }}</a></li>
-        {% endfor %}
-        </ul>
+        {% if page.repositories | size > 0 %}
+          <h2>Repositories</h2>
+          <ul>
+          {% for repo in page.repositories %}
+              <li><a href="{{ repo.url }}">{{ repo.name }}</a></li>
+          {% endfor %}
+          </ul>
+        {% endif %}
 
-        <h2>Technologies</h2>
-        <ul>
-        {% for technology in page.technologies %}
-        	<li>{{ technology }} ({{ site.data.tech[technology].type }})</li>
-        {% endfor %}
-        </ul>
-
-        <h2>Tags</h2>
-        <ul>
-        {% for tag in page.tags %}
-        	<li>{{ tag }}</li>
-        {% endfor %}
-        </ul>
-
-        <h2>Categories</h2>
-        <ul>
-        {% for cat in page.categories %}
-        	<li>{{ cat }}</li>
-        {% endfor %}
-        </ul>
     </div>
+
 </article>

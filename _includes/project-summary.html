@@ -1,0 +1,27 @@
+<article class="project project-summary">
+  <div class="header">
+    <span class="date">{{ project.date | date: "%Y" }}</span>
+    <span class="dot-divider"></span>
+    <span class="category">{{ project.category }}</span>
+    {% if project.size %}
+      <span class="dot-divider"></span>
+      <span class="size">{{ project.size }}</span>
+    {% endif %}
+    {% if project.active %}
+      <span class="active">active</span>
+    {% endif %}
+  </div>
+  <div class="summary">
+    <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+    <p>{{ project.excerpt }}</p>
+    <a href="{{ site.baseurl }}{{ project.url }}" class="read-more">Read More...</a>
+  </div>
+  <div class="footer">
+    {% for technology in project.technologies %}
+      <span class="tech-{{ site.data.tech[technology].type }}">{{ technology }}</span>
+    {% endfor %}
+<!---
+    {% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}
+-->
+  </div>
+</article>
