@@ -17,8 +17,41 @@ layout: default
   {% endfor %}
 </div>
 
+<h1>Personal projects</h1>
+Show these categories:
+{% assign categories = site.projects | group_by: "category" %}
+{% assign sorted_categories = categories | sort: "name" %}
+{% for category in sorted_categories %}
+  <button class="category-toggle" id="{{ category.name | slugify }}">{{ category.name }}</button>
+{% endfor %}
+Select technology
+<span class="tech" id="show-all">Show All</span>
+{% for tech in site.data.tech %}
+  {% assign type = tech[1]['type'] | slugify %}
+  <span class="tech tech-{{ type }}" id="{{ tech[0] | slugify }}">{{ tech[0] }}</span>
+{% endfor %}
 <div class="projects">
   {% for project in site.projects reversed %}
     {% include project-summary.html %}
   {% endfor %}
 </div>
+
+<script>
+$(document).ready(function () {
+
+  $('.category-toggle').on('click', function(event) {
+    var catId = this.id;
+    $('.project-summary.category-' + catId).toggle();
+  });
+
+  $('.tech').on('click', function(event) {
+    var techId = this.id;
+    console.log(techId);
+    $('.project-summary.tech-' + techId).toggle();
+  });
+  $('.tech#show-all').off('click');
+  $('.tech#show-all').on('click', function(event) {
+    $('.project-summary').show();
+  });
+});
+</script>

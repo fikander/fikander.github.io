@@ -1,4 +1,9 @@
-<article class="project project-summary">
+<article class="project project-summary category-{{ project.category | slugify }}
+{% for tech in project.technologies %}
+  tech-{{ tech | slugify }}
+{% endfor %}
+">
+
   <div class="header">
     <span class="date">{{ project.date | date: "%Y" }}</span>
     <span class="dot-divider"></span>
@@ -14,6 +19,7 @@
       </div>
     {% endif %}
   </div>
+
   <div class="summary">
     {% if project.summary_image %}
     <div class="summary-left">
@@ -28,12 +34,15 @@
     </div>
     {% endif %}
   </div>
+
   <div class="footer">
     {% for technology in project.technologies %}
-      <span class="tech-{{ site.data.tech[technology].type }}">{{ technology }}</span>
+      {% assign type = site.data.tech[technology].type | slugify %}
+      <span class="tech tech-{{ type }}" id="{{ technology | slugify }}">{{ technology }}</span>
     {% endfor %}
 <!---
     {% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}
 -->
   </div>
+
 </article>
