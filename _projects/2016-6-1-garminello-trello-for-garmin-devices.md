@@ -27,7 +27,7 @@ published: true
 active: true
 size: medium
 summary_image: garminello.png
-permalink: project/2016-1-1-garminello-trello-for-garmin-devices/
+#permalink: project/2016-1-1-garminello-trello-for-garmin-devices/
 ---
 Trello integration for Garmin devices. Includes [smartwatch application](https://apps.garmin.com/en-US/apps/da6ba406-488c-4f10-83d4-3e70507d4656) and [NodeJS based backend](https://garminello.herokuapp.com), with UI based on BackboneJS.
 
