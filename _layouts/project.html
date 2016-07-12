@@ -22,7 +22,7 @@ body_class: project
 
     <div class="footer">
       {% for technology in page.technologies %}
-        <span class="tech-{{ site.data.tech[technology].type }}">{{ technology }}</span>
+        <span class="tech tech-{{ site.data.tech[technology].type |slugify }}">{{ technology }}</span>
       {% endfor %}
 <!---
       <hr/>

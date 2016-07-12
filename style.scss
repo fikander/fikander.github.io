@@ -402,6 +402,12 @@ span.tech {
     background-color: $gray;
   }
 }
+.tech-hosting {
+  background-color: $lightGray;
+  &:hover, &.active {
+    background-color: $gray;
+  }
+}
 
 .dot-divider {
   padding: 0 .45em;
