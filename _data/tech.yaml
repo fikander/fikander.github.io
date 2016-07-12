@@ -51,3 +51,7 @@ Docker:
 
 Jekyll:
   type: build tool
+
+Wordpress:
+  type: cms
+

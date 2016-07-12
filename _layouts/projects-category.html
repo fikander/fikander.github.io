@@ -1,0 +1,91 @@
+---
+layout: default
+---
+{{ content }}
+
+<h1>Personal projects</h1>
+Showing categories:
+{% for cat in page.categories %}
+  <a href="/{{ cat }}">{{ cat }}</a>{% if forloop.last == false%},{% endif %}
+{% endfor %}
+<!---
+Show these categories:
+{% assign categories = site.projects | group_by: "category" %}
+{% assign sorted_categories = categories | sort: "name" %}
+{% for category in sorted_categories %}
+  <button class="category-toggle" id="{{ category.name | slugify }}">{{ category.name }}</button>
+{% endfor %}
+<hr/>
+-->
+<hr/>
+Select technology (<a class="tech" id="show-all">show all</a>):
+<br/>
+{% for tech in site.data.tech %}
+  {% assign type = tech[1]['type'] | slugify %}
+  <span class="tech tech-{{ type }}" id="{{ tech[0] | slugify }}">{{ tech[0] }}</span>
+{% endfor %}
+
+<br/>
+<br/>
+<div class="projects">
+  {% for project in site.projects reversed %}
+    {% if page.categories contains project.category %}
+      {% include project-summary.html %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script>
+var fkndr = fkndr || {};
+
+fkndr.Tech = function(selector) {
+  this.filter = {};
+  this.selector = selector;
+};
+
+fkndr.Tech.prototype.install = function() {
+  var self = this;
+  $(this.selector).on('click', function(event) {
+    self.toggle(this.id);  // this -> object being clicked
+  });
+  // show all button
+  $(this.selector + '#show-all').off('click');
+  $(this.selector + '#show-all').on('click', function(event) {
+    self.reset();
+  });
+};
+
+fkndr.Tech.prototype.reset = function() {
+  this.filter = {};
+  $('.project-summary').show();
+  this.updateButtons();
+};
+
+fkndr.Tech.prototype.toggle = function(tech_id) {
+  if (this.filter[tech_id]) {
+    delete this.filter[tech_id];
+  } else {
+    this.filter[tech_id] = true;
+  }
+  // process all summaries
+  $('.project-summary').hide();
+  Object.keys(this.filter).forEach(function(tech_id) {
+    $('.project-summary.tech-' + tech_id).show();
+  });
+  this.updateButtons();
+};
+
+fkndr.Tech.prototype.updateButtons = function() {
+  var self = this;
+  $(this.selector).removeClass('active');
+  Object.keys(this.filter).forEach(function(tech) {
+    $(self.selector + '#' + tech).addClass('active');
+  });
+};
+
+$(document).ready(function () {
+  var tech = new fkndr.Tech('.tech');
+  tech.install();
+});
+
+</script>
