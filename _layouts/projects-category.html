@@ -18,7 +18,7 @@ Show these categories:
 <hr/>
 -->
 <hr/>
-Select technology (<a class="tech" id="show-all">show all</a>):
+Filter by technology <span id="show-all">(<a class="tech" id="show-all">show all</a>)</span>:
 <br/>
 {% for tech in site.data.tech %}
   {% assign type = tech[1]['type'] | slugify %}
@@ -53,6 +53,7 @@ fkndr.Tech.prototype.install = function() {
   $(this.selector + '#show-all').on('click', function(event) {
     self.reset();
   });
+  this.reset();
 };
 
 fkndr.Tech.prototype.reset = function() {
@@ -81,6 +82,11 @@ fkndr.Tech.prototype.updateButtons = function() {
   Object.keys(this.filter).forEach(function(tech) {
     $(self.selector + '#' + tech).addClass('active');
   });
+  if (Object.keys(this.filter).length > 0) {
+    $('#show-all').show();
+  } else {
+    $('#show-all').hide();
+  }
 };
 
 $(document).ready(function () {

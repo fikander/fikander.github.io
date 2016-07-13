@@ -2,12 +2,28 @@ Python:
   type: language
   url: http://www.python.org
 
+JavaScript ES6:
+  type: language
+
+JavaScript:
+  type: language
+
+Java:
+  type: language
+
+Monkey C:
+  type: language
+
 PostgreSQL:
   type: database
   url: https://www.postgresql.org
 
-Monkey C:
-  type: language
+Docker:
+  type: platform
+  url: http://docker.com
+
+AppEngine:
+  type: platform
 
 NodeJS:
   type: platform
@@ -18,39 +34,23 @@ BackboneJS:
 Browserify:
   type: framework
 
-Gulp:
-  type: build tool
-
-JavaScript ES6:
-  type: language
-
-JavaScript:
-  type: language
-
-Java:
-  type: language
-
 jQuery:
   type: framework
-
-AppEngine:
-  type: platform
 
 Express:
   type: framework
   desc: Lightweight NodeJS web framework
   url: http://expressjs.com
 
-Heroku:
-  type: hosting
-  url: http://heroku.com
-
-Docker:
-  type: platform
-  url: http://docker.com
+Gulp:
+  type: build tool
 
 Jekyll:
   type: build tool
+
+Heroku:
+  type: hosting
+  url: http://heroku.com
 
 Wordpress:
   type: cms

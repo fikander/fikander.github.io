@@ -355,11 +355,15 @@ span.tech {
   border-radius: 3px;
   display: inline-block;
 
-  opacity: 1.0;
+  opacity: 0.75;
   &:hover {
     cursor: pointer;
   }
+  &.active {
+    border: 1px solid $darkGray;
+  }
 }
+
 .tech-language {
   background-color: rgba(173, 216, 230, 0.3);
   &:hover, &.active {
