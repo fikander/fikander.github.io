@@ -7,11 +7,13 @@ technologies:
   - Python
 repositories:
   - url: https://github.com/fikander/repository
+    type: github
     name: Sample repository
 category: category1
 tags:
   - tag1
 published: false
+summary_image: image_from_images_projects.png
 ---
 This is sample project, built in {{ page.date | date: "%Y" }}.
 

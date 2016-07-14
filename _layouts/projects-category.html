@@ -4,28 +4,30 @@ layout: default
 {{ content }}
 
 <h1>Personal projects</h1>
-Showing categories:
-{% for cat in page.categories %}
-  <a href="/{{ cat }}">{{ cat }}</a>{% if forloop.last == false%},{% endif %}
-{% endfor %}
-<!---
-Show these categories:
-{% assign categories = site.projects | group_by: "category" %}
-{% assign sorted_categories = categories | sort: "name" %}
-{% for category in sorted_categories %}
-  <button class="category-toggle" id="{{ category.name | slugify }}">{{ category.name }}</button>
-{% endfor %}
-<hr/>
--->
-<hr/>
-Filter by technology <span id="show-all">(<a class="tech" id="show-all">show all</a>)</span>:
-<br/>
-{% for tech in site.data.tech %}
-  {% assign type = tech[1]['type'] | slugify %}
-  <span class="tech tech-{{ type }}" id="{{ tech[0] | slugify }}">{{ tech[0] }}</span>
-{% endfor %}
+<div class="filters">
+  Showing categories:
+  {% for cat in page.categories %}
+    <a href="/{{ cat }}">{{ cat }}</a>{% if forloop.last == false%},{% endif %}
+  {% endfor %}
+  <!---
+  Show these categories:
+  {% assign categories = site.projects | group_by: "category" %}
+  {% assign sorted_categories = categories | sort: "name" %}
+  {% for category in sorted_categories %}
+    <button class="category-toggle" id="{{ category.name | slugify }}">{{ category.name }}</button>
+  {% endfor %}
+  <hr/>
+  -->
+  <br/>
+  <br/>
+  Filter by technology <span id="show-all">(<a class="tech" id="show-all">show all</a>)</span>:
+  <br/>
+  {% for tech in site.data.tech %}
+    {% assign type = tech[1]['type'] | slugify %}
+    <span class="tech tech-{{ type }}" id="{{ tech[0] | slugify }}">{{ tech[0] }}</span>
+  {% endfor %}
+</div>
 
-<br/>
 <br/>
 <div class="projects">
   {% for project in site.projects reversed %}

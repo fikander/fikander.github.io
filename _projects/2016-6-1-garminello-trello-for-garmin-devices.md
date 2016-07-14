@@ -3,6 +3,7 @@ layout: project
 title: Garminello - Trello for Garmin devices
 technologies:
   - Docker
+  - JavaScript
   - JavaScript ES6
   - NodeJS
   - BackboneJS
@@ -20,9 +21,11 @@ tags:
   - client
 repositories:
   - url: https://github.com/fikander/garminello-watch
-    name: Garmin watch application (MonkeyC)
+    type: github
+    name: 'Garmin watch application (MonkeyC)'
   - url: https://github.com/fikander/garminello-web
-    name: NodeJS based backend and BackboneJS frontend
+    type: github
+    name: 'NodeJS based backend and BackboneJS frontend'
 published: true
 active: true
 size: medium

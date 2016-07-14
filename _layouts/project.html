@@ -31,17 +31,24 @@ body_class: project
     </div>
 
     <div class="entry">
-        {{ content }}
-
         {% if page.repositories | size > 0 %}
-          <h2>Repositories</h2>
+          <div class='repositories'>
           <ul>
           {% for repo in page.repositories %}
-              <li><a href="{{ repo.url }}">{{ repo.name }}</a></li>
+            <li>
+            {% case repo.type %}
+              {% when 'github' %}
+                <span class='fa fa-github'></span>
+              {% else %}
+            {% endcase %}
+              <a href="{{ repo.url }}">{{ repo.name }}</a>
+            </li>
           {% endfor %}
           </ul>
+          </div>
         {% endif %}
 
+        {{ content }}
     </div>
 
 </article>

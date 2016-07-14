@@ -55,3 +55,8 @@ Heroku:
 Wordpress:
   type: cms
 
+drones:
+  type: other
+
+Final Cut Pro X:
+  type: other

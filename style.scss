@@ -269,6 +269,23 @@ article {
   }
 }
 
+.repositories {
+  font-family: $lucida;
+  background-color: aliceblue;
+  padding: 5px 20px;
+  margin-top: 20px;
+
+  ul {
+    padding-left: 0px;
+    list-style-type: none;
+  }  
+}
+
+.filters {
+  font-family: $lucida;  
+  font-size: 18px;
+}
+
 //
 // projects
 //
@@ -407,6 +424,12 @@ span.tech {
   }
 }
 .tech-hosting {
+  background-color: $lightGray;
+  &:hover, &.active {
+    background-color: $gray;
+  }
+}
+.tech-other {
   background-color: $lightGray;
   &:hover, &.active {
     background-color: $gray;

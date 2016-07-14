@@ -6,6 +6,7 @@ tags:
   - blog
 repositories:
   - url: https://github.com/fikander/fikander.github.io
+    type: github
     name: Jekyll based blog and project documentation
 technologies:
   - Jekyll
